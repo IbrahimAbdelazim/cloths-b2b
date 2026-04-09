@@ -2,7 +2,13 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Shirt, ArrowRight, Building2, ShoppingBag, ShieldCheck } from "lucide-react";
+import {
+  Shirt,
+  ArrowRight,
+  Building2,
+  ShoppingBag,
+  ShieldCheck,
+} from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -37,7 +43,8 @@ export default function LoginPage() {
     localStorage.setItem("demo_user_id", user.id);
     localStorage.setItem("demo_user_name", user.name);
     if (user.factoryId) localStorage.setItem("demo_factory_id", user.factoryId);
-    if (user.customerId) localStorage.setItem("demo_customer_id", user.customerId);
+    if (user.customerId)
+      localStorage.setItem("demo_customer_id", user.customerId);
 
     toast.success(`Welcome back, ${user.name}!`);
     setTimeout(() => {
@@ -54,43 +61,6 @@ export default function LoginPage() {
 
   return (
     <div className="min-h-screen flex">
-      {/* Left brand panel */}
-      <div className="hidden lg:flex lg:w-1/2 bg-slate-900 flex-col justify-between p-10">
-        <div className="flex items-center gap-2">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-indigo-500">
-            <Shirt className="h-5 w-5 text-white" />
-          </div>
-          <span className="text-white font-bold text-lg">ClothsB2B</span>
-        </div>
-        <div>
-          <blockquote className="space-y-4">
-            <p className="text-3xl font-bold text-white leading-tight">
-              The Modern B2B<br />Clothing Platform
-            </p>
-            <p className="text-slate-400 text-base">
-              Connect verified factories with retail store owners.<br />
-              Bulk ordering made simple.
-            </p>
-          </blockquote>
-          <div className="mt-10 grid grid-cols-3 gap-4">
-            {[
-              { value: "200+", label: "Verified Factories" },
-              { value: "10K+", label: "Products" },
-              { value: "$50M+", label: "In Orders" },
-            ].map((stat) => (
-              <div key={stat.label} className="bg-slate-800 rounded-lg p-4">
-                <p className="text-2xl font-bold text-white">{stat.value}</p>
-                <p className="text-slate-400 text-xs mt-1">{stat.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-        <p className="text-slate-600 text-xs">
-          © 2026 ClothsB2B. All rights reserved.
-        </p>
-      </div>
-
-      {/* Right form panel */}
       <div className="flex-1 flex items-center justify-center p-8">
         <div className="w-full max-w-sm space-y-6">
           <div className="lg:hidden flex items-center gap-2 mb-6">
@@ -142,7 +112,9 @@ export default function LoginPage() {
               <span className="w-full border-t border-zinc-200" />
             </div>
             <div className="relative flex justify-center text-xs">
-              <span className="bg-white px-2 text-zinc-400">Quick demo access</span>
+              <span className="bg-white px-2 text-zinc-400">
+                Quick demo access
+              </span>
             </div>
           </div>
 
@@ -156,7 +128,9 @@ export default function LoginPage() {
                 <ShieldCheck className="h-4 w-4 text-violet-600" />
               </div>
               <div>
-                <p className="text-sm font-medium text-zinc-900">Admin Portal</p>
+                <p className="text-sm font-medium text-zinc-900">
+                  Admin Portal
+                </p>
                 <p className="text-xs text-zinc-500">admin@clothsb2b.com</p>
               </div>
               <ArrowRight className="h-4 w-4 text-zinc-400 ml-auto" />
@@ -169,7 +143,9 @@ export default function LoginPage() {
                 <Building2 className="h-4 w-4 text-blue-600" />
               </div>
               <div>
-                <p className="text-sm font-medium text-zinc-900">Factory Portal</p>
+                <p className="text-sm font-medium text-zinc-900">
+                  Factory Portal
+                </p>
                 <p className="text-xs text-zinc-500">factory@clothsb2b.com</p>
               </div>
               <ArrowRight className="h-4 w-4 text-zinc-400 ml-auto" />
@@ -182,7 +158,9 @@ export default function LoginPage() {
                 <ShoppingBag className="h-4 w-4 text-indigo-600" />
               </div>
               <div>
-                <p className="text-sm font-medium text-zinc-900">Store Owner Portal</p>
+                <p className="text-sm font-medium text-zinc-900">
+                  Store Owner Portal
+                </p>
                 <p className="text-xs text-zinc-500">store@clothsb2b.com</p>
               </div>
               <ArrowRight className="h-4 w-4 text-zinc-400 ml-auto" />
@@ -191,11 +169,17 @@ export default function LoginPage() {
 
           <p className="text-center text-sm text-zinc-500">
             New store owner?{" "}
-            <Link href="/register/customer" className="text-indigo-600 hover:underline font-medium">
+            <Link
+              href="/register/customer"
+              className="text-indigo-600 hover:underline font-medium"
+            >
               Register
             </Link>
             {" · "}
-            <Link href="/register/factory" className="text-blue-600 hover:underline font-medium">
+            <Link
+              href="/register/factory"
+              className="text-blue-600 hover:underline font-medium"
+            >
               Apply as factory
             </Link>
           </p>
