@@ -19,7 +19,7 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
             <br />
             Clothing Platform
           </h2>
-          <p className="text-slate-400 text-sm leading-relaxed mb-10">
+          <p className="text-slate-200 text-sm leading-relaxed mb-10">
             Connect with 200+ verified factories worldwide. Source bulk clothing at wholesale prices.
           </p>
 

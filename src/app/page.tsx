@@ -23,7 +23,7 @@ export default function HomePage() {
                 Meet Retailers
               </span>
             </h1>
-            <p className="text-xl text-slate-400 leading-relaxed mb-10 max-w-xl">
+            <p className="text-xl text-slate-300 leading-relaxed mb-10 max-w-xl">
               Connect with 200+ verified factories worldwide. Order bulk clothing at competitive wholesale prices with full MOQ flexibility.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
@@ -33,7 +33,7 @@ export default function HomePage() {
                   <ArrowRight className="h-4 w-4 ml-2" />
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" asChild className="border-slate-600 text-slate-200 hover:bg-slate-800 hover:text-white h-12 px-8 text-base">
+              <Button size="lg" variant="outline" asChild className="border-slate-600 text-slate-800 hover:bg-slate-800 hover:text-white h-12 px-8 text-base">
                 <Link href="/register/factory">
                   List Your Factory
                 </Link>
@@ -70,8 +70,8 @@ export default function HomePage() {
             ].map((stat) => (
               <div key={stat.label}>
                 <p className="text-3xl font-bold text-white mb-1">{stat.value}</p>
-                <p className="text-base font-medium text-slate-200">{stat.label}</p>
-                <p className="text-sm text-slate-400 mt-0.5">{stat.sub}</p>
+                <p className="text-base font-medium text-slate-800">{stat.label}</p>
+                <p className="text-sm text-slate-800 mt-0.5">{stat.sub}</p>
               </div>
             ))}
           </div>
@@ -259,7 +259,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-14">
             <h2 className="text-3xl font-bold text-zinc-900 mb-3">How It Works</h2>
-            <p className="text-slate-500 max-w-xl mx-auto">
+            <p className="text-slate-800 max-w-xl mx-auto">
               From registration to your first order in days, not months.
             </p>
           </div>
@@ -281,7 +281,7 @@ export default function HomePage() {
                   { step: "04", title: "Receive orders & earn", desc: "Accept orders, fulfill shipments, and get paid securely through the platform." },
                 ].map((item) => (
                   <div key={item.step} className="flex gap-4">
-                    <div className="text-2xl font-bold text-slate-200 w-10 shrink-0 leading-none">
+                    <div className="text-2xl font-bold text-slate-800 w-10 shrink-0 leading-none">
                       {item.step}
                     </div>
                     <div>
@@ -309,7 +309,7 @@ export default function HomePage() {
                   { step: "04", title: "Track your shipment", desc: "Get real-time tracking from factory floor to your door. Full transparency." },
                 ].map((item) => (
                   <div key={item.step} className="flex gap-4">
-                    <div className="text-2xl font-bold text-slate-200 w-10 shrink-0 leading-none">
+                    <div className="text-2xl font-bold text-slate-800 w-10 shrink-0 leading-none">
                       {item.step}
                     </div>
                     <div>
@@ -340,7 +340,7 @@ export default function HomePage() {
                 <ArrowRight className="h-4 w-4 ml-2" />
               </Link>
             </Button>
-            <Button size="lg" variant="outline" asChild className="border-indigo-300 text-white hover:bg-indigo-700 h-12 px-8 text-base">
+            <Button size="lg" variant="outline" asChild className="border-indigo-300 text-slate-800 hover:bg-indigo-700 h-12 px-8 text-base">
               <Link href="/register/factory">I&apos;m a Manufacturer</Link>
             </Button>
           </div>
@@ -358,14 +358,14 @@ export default function HomePage() {
                 </div>
                 <span className="font-bold text-white text-lg">ClothsB2B</span>
               </div>
-              <p className="text-slate-400 text-sm max-w-xs">
+              <p className="text-slate-800 text-sm max-w-xs">
                 The modern B2B wholesale clothing platform connecting factories and retailers worldwide.
               </p>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-8 text-sm">
               <div>
                 <p className="font-semibold text-white mb-3">Platform</p>
-                <ul className="space-y-2 text-slate-400">
+                <ul className="space-y-2 text-slate-800">
                   <li><Link href="/store" className="hover:text-white transition-colors">Browse Catalog</Link></li>
                   <li><Link href="/register/factory" className="hover:text-white transition-colors">List Factory</Link></li>
                   <li><Link href="/login" className="hover:text-white transition-colors">Sign In</Link></li>
@@ -373,7 +373,7 @@ export default function HomePage() {
               </div>
               <div>
                 <p className="font-semibold text-white mb-3">Portals</p>
-                <ul className="space-y-2 text-slate-400">
+                <ul className="space-y-2 text-slate-800">
                   <li><Link href="/admin" className="hover:text-white transition-colors">Admin</Link></li>
                   <li><Link href="/factory" className="hover:text-white transition-colors">Factory</Link></li>
                   <li><Link href="/store" className="hover:text-white transition-colors">Store</Link></li>
@@ -381,7 +381,7 @@ export default function HomePage() {
               </div>
               <div>
                 <p className="font-semibold text-white mb-3">Company</p>
-                <ul className="space-y-2 text-slate-400">
+                <ul className="space-y-2 text-slate-800">
                   <li><span className="cursor-default">About</span></li>
                   <li><span className="cursor-default">Contact</span></li>
                   <li><span className="cursor-default">Privacy</span></li>
@@ -389,7 +389,7 @@ export default function HomePage() {
               </div>
             </div>
           </div>
-          <div className="border-t border-slate-800 mt-10 pt-6 text-center text-xs text-slate-500">
+          <div className="border-t border-slate-800 mt-10 pt-6 text-center text-xs text-slate-800">
             © 2026 ClothsB2B. All rights reserved.
           </div>
         </div>
