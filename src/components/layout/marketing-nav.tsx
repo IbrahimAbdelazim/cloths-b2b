@@ -32,7 +32,7 @@ export function MarketingNav() {
           <Button size="sm" asChild className="bg-indigo-600 hover:bg-indigo-700 text-white">
             <Link href="/register/customer">Start Buying</Link>
           </Button>
-          <Button size="sm" variant="outline" asChild className="border-slate-600 text-slate-800 hover:bg-slate-800 hover:text-white">
+          <Button size="sm" variant="outline" asChild className="bg-transparent border-slate-600 text-slate-200 hover:bg-slate-800 hover:text-white">
             <Link href="/register/factory">Start Selling</Link>
           </Button>
         </div>

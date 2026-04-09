@@ -33,7 +33,7 @@ export default function HomePage() {
                   <ArrowRight className="h-4 w-4 ml-2" />
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" asChild className="border-slate-600 text-slate-800 hover:bg-slate-800 hover:text-white h-12 px-8 text-base">
+              <Button size="lg" variant="outline" asChild className="bg-transparent border-slate-600 text-slate-200 hover:bg-slate-800 hover:text-white h-12 px-8 text-base">
                 <Link href="/register/factory">
                   List Your Factory
                 </Link>
@@ -340,7 +340,7 @@ export default function HomePage() {
                 <ArrowRight className="h-4 w-4 ml-2" />
               </Link>
             </Button>
-            <Button size="lg" variant="outline" asChild className="border-indigo-300 text-slate-800 hover:bg-indigo-700 h-12 px-8 text-base">
+            <Button size="lg" variant="outline" asChild className="bg-transparent border-indigo-300 text-white hover:bg-indigo-700 hover:text-white h-12 px-8 text-base">
               <Link href="/register/factory">I&apos;m a Manufacturer</Link>
             </Button>
           </div>
