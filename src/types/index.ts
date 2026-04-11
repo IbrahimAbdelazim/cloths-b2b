@@ -1,9 +1,5 @@
 export type UserRole = "ADMIN" | "FACTORY" | "CUSTOMER";
-export type FactoryStatus =
-  | "PENDING"
-  | "APPROVED"
-  | "REJECTED"
-  | "SUSPENDED";
+export type FactoryStatus = "PENDING" | "APPROVED" | "REJECTED" | "SUSPENDED";
 export type ProductStatus =
   | "DRAFT"
   | "PENDING_APPROVAL"
@@ -16,6 +12,33 @@ export type OrderStatus =
   | "SHIPPED"
   | "DELIVERED"
   | "CANCELLED";
+export type SubscriptionPlan = "STARTER" | "PROFESSIONAL" | "ENTERPRISE";
+export type IndustryType =
+  | "APPAREL"
+  | "FOOTWEAR"
+  | "ACCESSORIES"
+  | "BAGS"
+  | "OTHER";
+
+export interface SubscriptionFeatures {
+  maxProducts: number | null; // null means unlimited
+  maxOrders: number | null;
+  customBranding: boolean;
+  prioritySupport: boolean;
+  analyticsAccess: boolean;
+  bulkUpload: boolean;
+  apiAccess: boolean;
+}
+
+export interface Subscription {
+  plan: SubscriptionPlan;
+  price: number; // monthly price in USD
+  currency: string;
+  features: SubscriptionFeatures;
+  startedAt: string;
+  expiresAt?: string;
+  isActive: boolean;
+}
 
 export interface PriceTier {
   minQty: number;
@@ -64,6 +87,8 @@ export interface Factory {
   joinedAt: string;
   contactName: string;
   contactEmail: string;
+  industryType: IndustryType;
+  subscription: Subscription;
 }
 
 export interface Product {

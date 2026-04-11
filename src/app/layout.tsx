@@ -4,8 +4,8 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | ClothsB2B",
-    default: "ClothsB2B — Wholesale Clothing Marketplace",
+    template: "%s | FactoryHub",
+    default: "FactoryHub — B2B Manufacturing Marketplace",
   },
   description:
     "B2B wholesale clothing platform connecting factories with retail store owners",

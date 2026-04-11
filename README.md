@@ -1,32 +1,35 @@
-# ClothsB2B — B2B Wholesale Clothing Marketplace
+# FactoryHub — B2B Manufacturing Marketplace
 
-A proof-of-concept platform that connects clothing manufacturers (factories) with retail store buyers in a wholesale B2B marketplace. Modeled after industry leaders like JOOR, NuOrder, and Faire, the platform provides three separate portals — each purpose-built for its role in the wholesale supply chain.
+A proof-of-concept platform that connects manufacturers (factories) with retail store buyers in a wholesale B2B marketplace. Supporting multiple industries including apparel, footwear, bags, and accessories. Modeled after industry leaders like JOOR, NuOrder, and Faire, the platform provides three separate portals — each purpose-built for its role in the wholesale supply chain.
 
 ---
 
 ## Business Overview
 
-The global wholesale clothing market operates on high-volume, relationship-driven transactions. Traditionally, retail buyers discover factories through trade shows, agents, or personal networks — a slow, opaque process with no standardized pricing or verification. **ClothsB2B** digitizes this workflow:
+The global wholesale manufacturing market operates on high-volume, relationship-driven transactions. Traditionally, retail buyers discover factories through trade shows, agents, or personal networks — a slow, opaque process with no standardized pricing or verification. **FactoryHub** digitizes this workflow:
 
-- **Factories** list their product catalog with bulk pricing tiers and MOQ (Minimum Order Quantity) requirements
-- **Store owners** browse a curated, verified catalog and place bulk orders directly
+- **Factories** select a subscription plan and industry type, then list their product catalog with bulk pricing tiers and MOQ (Minimum Order Quantity) requirements
+- **Store owners** browse a curated, verified catalog across multiple product categories and place bulk orders directly
 - **Admins** manage platform trust by verifying factory credentials (KYC) and approving products before they go live
 
 ### Core Concepts
 
-| Concept | Description |
-|---|---|
-| **MOQ (Minimum Order Quantity)** | Every product has a minimum order threshold (e.g. 50 units). Orders below MOQ are blocked. |
-| **Price Tiers** | Volume-based pricing — the more you order, the lower the unit price. Example: $8.50/unit for 50–99 units, $7.20/unit for 100–499 units, $6.00/unit for 500+. |
-| **Factory KYC** | Factories must submit registration documents and pass an admin review before listing products. |
-| **Product Approval** | Every product submitted by a factory enters a `PENDING_APPROVAL` state and must be reviewed by an admin before becoming visible to buyers. |
-| **Per-Factory Orders** | In B2B wholesale, orders are placed per-factory (not as a single global cart). Each factory fulfills and ships its own orders independently. |
+| Concept                          | Description                                                                                                                                                  |
+| -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Subscription Plans**           | Factories choose from Starter ($49/mo), Professional ($149/mo), or Enterprise ($399/mo) plans with different product limits, features, and support levels.   |
+| **Industry Types**               | Platform supports Apparel, Footwear, Bags, Accessories, and Other product categories for diverse manufacturing sectors.                                      |
+| **MOQ (Minimum Order Quantity)** | Every product has a minimum order threshold (e.g. 50 units). Orders below MOQ are blocked.                                                                   |
+| **Price Tiers**                  | Volume-based pricing — the more you order, the lower the unit price. Example: $8.50/unit for 50–99 units, $7.20/unit for 100–499 units, $6.00/unit for 500+. |
+| **Factory KYC**                  | Factories must submit registration documents, select their industry type and subscription plan before passing an admin review.                               |
+| **Product Approval**             | Every product submitted by a factory enters a `PENDING_APPROVAL` state and must be reviewed by an admin before becoming visible to buyers.                   |
+| **Per-Factory Orders**           | In B2B wholesale, orders are placed per-factory (not as a single global cart). Each factory fulfills and ships its own orders independently.                 |
 
 ---
 
 ## Portals
 
 ### Admin Portal (`/admin`)
+
 > Manages platform trust and operations
 
 - **Dashboard** — KPI cards (pending factories, products to review, GMV, active orders) with inline approve/reject actions
@@ -40,6 +43,7 @@ The global wholesale clothing market operates on high-volume, relationship-drive
 ---
 
 ### Factory Portal (`/factory`)
+
 > Manufacturers manage their catalog and fulfill orders
 
 - **Dashboard** — Revenue bar chart, product/order stats, recent activity tables
@@ -57,6 +61,7 @@ The global wholesale clothing market operates on high-volume, relationship-drive
 ---
 
 ### Store Portal (`/store`)
+
 > Retail buyers source and order wholesale products
 
 - **Product Catalog** — Grid with search, category filter, MOQ range filter, and sort (newest / price / MOQ). Shows only admin-approved products.
@@ -72,17 +77,17 @@ The global wholesale clothing market operates on high-volume, relationship-drive
 
 ## Tech Stack
 
-| Layer | Technology |
-|---|---|
-| Framework | Next.js 16 (App Router, Turbopack) |
-| Language | TypeScript 5 |
-| Styling | Tailwind CSS v4 (CSS-first config via `@theme {}`) |
+| Layer         | Technology                                                     |
+| ------------- | -------------------------------------------------------------- |
+| Framework     | Next.js 16 (App Router, Turbopack)                             |
+| Language      | TypeScript 5                                                   |
+| Styling       | Tailwind CSS v4 (CSS-first config via `@theme {}`)             |
 | UI Components | Radix UI primitives (manually styled — no registry dependency) |
-| Notifications | Sonner (toast) |
-| State | React `useState` / `useEffect` / `useCallback` |
-| Persistence | `localStorage` (cart + role simulation) |
-| Data | TypeScript mock data files (no database) |
-| Icons | Lucide React |
+| Notifications | Sonner (toast)                                                 |
+| State         | React `useState` / `useEffect` / `useCallback`                 |
+| Persistence   | `localStorage` (cart + role simulation)                        |
+| Data          | TypeScript mock data files (no database)                       |
+| Icons         | Lucide React                                                   |
 
 ---
 
@@ -125,11 +130,11 @@ src/
 
 No real authentication — roles are simulated via `localStorage`. Use the quick-access buttons on the login page:
 
-| Role | Email | Password | Redirects To |
-|---|---|---|---|
-| Admin | `admin@clothsb2b.com` | `admin123` | `/admin` |
-| Factory | `factory@clothsb2b.com` | `factory123` | `/factory` |
-| Store Owner | `store@clothsb2b.com` | `store123` | `/store` |
+| Role        | Email                    | Password     | Redirects To |
+| ----------- | ------------------------ | ------------ | ------------ |
+| Admin       | `admin@factoryhub.com`   | `admin123`   | `/admin`     |
+| Factory     | `factory@factoryhub.com` | `factory123` | `/factory`   |
+| Store Owner | `store@factoryhub.com`   | `store123`   | `/store`     |
 
 ---
 
@@ -154,11 +159,13 @@ npm run lint       # ESLint
 All data lives in `src/data/` and is imported directly by components — no API calls.
 
 **Factories** (8 total):
+
 - 5 `APPROVED` — Sunrise Garments (Bangladesh), BestWear Co. (Turkey), VietTex (Vietnam), Porto Textile (Portugal), IndiaFab (India)
 - 2 `PENDING` — Horizon Apparel (China), Nile Cotton (Egypt)
 - 1 `REJECTED` — FastFashion Co. (Pakistan)
 
 **Products** (12 total across approved factories):
+
 - Categories: T-Shirts, Denim, Activewear, Knitwear, Formal Shirts, Outerwear
 - MOQ range: 50 – 500 units
 - Price tiers: typically 3 per product (50–99 / 100–499 / 500+)
