@@ -32,14 +32,16 @@ export function FactorySidebar({ companyName }: FactorySidebarProps) {
         <div className="flex h-7 w-7 items-center justify-center rounded-md bg-blue-600">
           <Shirt className="h-4 w-4 text-white" />
         </div>
-        <span className="font-semibold text-zinc-900 text-sm">ClothsB2B</span>
+        <span className="font-semibold text-zinc-900 text-sm">FactoryHub</span>
       </div>
 
       {/* Company info */}
       <div className="px-4 py-3 border-b border-zinc-100">
         <p className="text-xs text-zinc-500 mb-0.5">Factory Portal</p>
         <div className="flex items-center gap-1.5">
-          <p className="text-sm font-medium text-zinc-900 truncate">{companyName}</p>
+          <p className="text-sm font-medium text-zinc-900 truncate">
+            {companyName}
+          </p>
           <BadgeCheck className="h-4 w-4 text-blue-500 shrink-0" />
         </div>
       </div>
@@ -59,13 +61,13 @@ export function FactorySidebar({ companyName }: FactorySidebarProps) {
                 "flex items-center gap-3 rounded-md px-3 py-2 text-sm transition-colors",
                 isActive
                   ? "bg-blue-50 text-blue-700 border-l-2 border-blue-600 pl-[10px]"
-                  : "text-zinc-600 hover:bg-zinc-50 hover:text-zinc-900"
+                  : "text-zinc-600 hover:bg-zinc-50 hover:text-zinc-900",
               )}
             >
               <item.icon
                 className={cn(
                   "h-4 w-4 shrink-0",
-                  isActive ? "text-blue-600" : "text-zinc-400"
+                  isActive ? "text-blue-600" : "text-zinc-400",
                 )}
               />
               {item.label}

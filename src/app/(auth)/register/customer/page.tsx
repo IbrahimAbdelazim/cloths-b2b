@@ -8,7 +8,14 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
-const STORE_TYPES = ["Boutique", "Chain Store", "Online Retailer", "Department Store", "Multi-brand", "Other"];
+const STORE_TYPES = [
+  "Boutique",
+  "Chain Store",
+  "Online Retailer",
+  "Department Store",
+  "Multi-brand",
+  "Other",
+];
 
 const COUNTRIES = [
   "United States",
@@ -68,11 +75,13 @@ export default function CustomerRegisterPage() {
         <div className="h-7 w-7 rounded-lg bg-indigo-600 flex items-center justify-center">
           <ShoppingBag className="h-3.5 w-3.5 text-white" />
         </div>
-        <span className="font-bold text-zinc-900">ClothsB2B</span>
+        <span className="font-bold text-zinc-900">FactoryHub</span>
       </div>
 
       <div className="mb-6">
-        <h1 className="text-2xl font-bold text-zinc-900">Create buyer account</h1>
+        <h1 className="text-2xl font-bold text-zinc-900">
+          Create buyer account
+        </h1>
         <p className="text-sm text-zinc-500 mt-1">
           Browse verified factories and place wholesale orders
         </p>
@@ -137,7 +146,9 @@ export default function CustomerRegisterPage() {
               >
                 <option value="">Select type</option>
                 {STORE_TYPES.map((t) => (
-                  <option key={t} value={t}>{t}</option>
+                  <option key={t} value={t}>
+                    {t}
+                  </option>
                 ))}
               </select>
             </div>
@@ -153,7 +164,9 @@ export default function CustomerRegisterPage() {
                 >
                   <option value="">Select</option>
                   {COUNTRIES.map((c) => (
-                    <option key={c} value={c}>{c}</option>
+                    <option key={c} value={c}>
+                      {c}
+                    </option>
                   ))}
                 </select>
               </div>
@@ -180,13 +193,17 @@ export default function CustomerRegisterPage() {
         </Button>
 
         <p className="text-xs text-center text-zinc-400">
-          By creating an account you agree to our Terms of Service and Privacy Policy.
+          By creating an account you agree to our Terms of Service and Privacy
+          Policy.
         </p>
       </div>
 
       <p className="text-center text-xs text-zinc-400 mt-6">
         Already have an account?{" "}
-        <Link href="/login" className="text-indigo-600 hover:underline font-medium">
+        <Link
+          href="/login"
+          className="text-indigo-600 hover:underline font-medium"
+        >
           Sign in
         </Link>
       </p>

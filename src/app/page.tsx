@@ -1,5 +1,15 @@
 import Link from "next/link";
-import { ArrowRight, BadgeCheck, Package, ShoppingBag, Truck, Users, Factory, BarChart3, Globe } from "lucide-react";
+import {
+  ArrowRight,
+  BadgeCheck,
+  Package,
+  ShoppingBag,
+  Truck,
+  Users,
+  Factory,
+  BarChart3,
+  Globe,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { MarketingNav } from "@/components/layout/marketing-nav";
 
@@ -24,19 +34,28 @@ export default function HomePage() {
               </span>
             </h1>
             <p className="text-xl text-slate-300 leading-relaxed mb-10 max-w-xl">
-              Connect with 200+ verified factories worldwide. Order bulk clothing at competitive wholesale prices with full MOQ flexibility.
+              Connect with 200+ verified manufacturers worldwide. Order bulk
+              products from apparel to footwear, bags to accessories at
+              competitive wholesale prices with full MOQ flexibility.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" asChild className="bg-indigo-600 hover:bg-indigo-700 text-white h-12 px-8 text-base">
+              <Button
+                size="lg"
+                asChild
+                className="bg-indigo-600 hover:bg-indigo-700 text-white h-12 px-8 text-base"
+              >
                 <Link href="/register/customer">
                   Start Buying
                   <ArrowRight className="h-4 w-4 ml-2" />
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" asChild className="bg-transparent border-slate-600 text-slate-200 hover:bg-slate-800 hover:text-white h-12 px-8 text-base">
-                <Link href="/register/factory">
-                  List Your Factory
-                </Link>
+              <Button
+                size="lg"
+                variant="outline"
+                asChild
+                className="bg-transparent border-slate-600 text-slate-200 hover:bg-slate-800 hover:text-white h-12 px-8 text-base"
+              >
+                <Link href="/register/factory">List Your Factory</Link>
               </Button>
             </div>
           </div>
@@ -64,13 +83,29 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
             {[
-              { value: "200+", label: "Verified Factories", sub: "Across 20+ countries" },
-              { value: "10,000+", label: "Wholesale Products", sub: "Updated daily" },
-              { value: "$50M+", label: "In Orders Placed", sub: "Trusted by 500+ stores" },
+              {
+                value: "200+",
+                label: "Verified Factories",
+                sub: "Across 20+ countries",
+              },
+              {
+                value: "10,000+",
+                label: "Wholesale Products",
+                sub: "Updated daily",
+              },
+              {
+                value: "$50M+",
+                label: "In Orders Placed",
+                sub: "Trusted by 500+ stores",
+              },
             ].map((stat) => (
               <div key={stat.label}>
-                <p className="text-3xl font-bold text-white mb-1">{stat.value}</p>
-                <p className="text-base font-medium text-slate-800">{stat.label}</p>
+                <p className="text-3xl font-bold text-white mb-1">
+                  {stat.value}
+                </p>
+                <p className="text-base font-medium text-slate-800">
+                  {stat.label}
+                </p>
                 <p className="text-sm text-slate-800 mt-0.5">{stat.sub}</p>
               </div>
             ))}
@@ -86,24 +121,51 @@ export default function HomePage() {
             <div className="bg-slate-50 rounded-2xl p-8 border border-slate-200">
               <div className="space-y-3">
                 {[
-                  { name: "Essential Cotton Tee", factory: "Sunrise Garments · Bangladesh", moq: "MOQ 50 units", price: "from $7.20/unit", color: "bg-amber-100 text-amber-800" },
-                  { name: "Slim Fit Denim Jeans", factory: "BestWear Co. · Turkey", moq: "MOQ 100 units", price: "from $14.50/unit", color: "bg-amber-100 text-amber-800" },
-                  { name: "Performance Dry-Fit Tee", factory: "VietTex · Vietnam", moq: "MOQ 50 units", price: "from $8.00/unit", color: "bg-amber-100 text-amber-800" },
+                  {
+                    name: "Essential Cotton Tee",
+                    factory: "Sunrise Garments · Bangladesh",
+                    moq: "MOQ 50 units",
+                    price: "from $7.20/unit",
+                    color: "bg-amber-100 text-amber-800",
+                  },
+                  {
+                    name: "Slim Fit Denim Jeans",
+                    factory: "BestWear Co. · Turkey",
+                    moq: "MOQ 100 units",
+                    price: "from $14.50/unit",
+                    color: "bg-amber-100 text-amber-800",
+                  },
+                  {
+                    name: "Performance Dry-Fit Tee",
+                    factory: "VietTex · Vietnam",
+                    moq: "MOQ 50 units",
+                    price: "from $8.00/unit",
+                    color: "bg-amber-100 text-amber-800",
+                  },
                 ].map((product) => (
-                  <div key={product.name} className="flex items-center gap-4 bg-white rounded-xl p-4 border border-slate-100 shadow-sm">
+                  <div
+                    key={product.name}
+                    className="flex items-center gap-4 bg-white rounded-xl p-4 border border-slate-100 shadow-sm"
+                  >
                     <div className="h-12 w-12 rounded-lg bg-slate-200 shrink-0" />
                     <div className="flex-1 min-w-0">
-                      <p className="font-semibold text-zinc-900 text-sm">{product.name}</p>
+                      <p className="font-semibold text-zinc-900 text-sm">
+                        {product.name}
+                      </p>
                       <p className="text-xs text-zinc-500 flex items-center gap-1">
                         <BadgeCheck className="h-3 w-3 text-emerald-500" />
                         {product.factory}
                       </p>
                     </div>
                     <div className="text-right shrink-0">
-                      <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${product.color}`}>
+                      <span
+                        className={`text-xs px-2 py-0.5 rounded-full font-medium ${product.color}`}
+                      >
                         {product.moq}
                       </span>
-                      <p className="text-sm font-semibold text-emerald-700 mt-1">{product.price}</p>
+                      <p className="text-sm font-semibold text-emerald-700 mt-1">
+                        {product.price}
+                      </p>
                     </div>
                   </div>
                 ))}
@@ -146,13 +208,20 @@ export default function HomePage() {
                       <feature.icon className="h-4.5 w-4.5 text-indigo-600" />
                     </div>
                     <div>
-                      <p className="font-semibold text-zinc-900 text-sm">{feature.title}</p>
-                      <p className="text-sm text-zinc-500 mt-0.5">{feature.desc}</p>
+                      <p className="font-semibold text-zinc-900 text-sm">
+                        {feature.title}
+                      </p>
+                      <p className="text-sm text-zinc-500 mt-0.5">
+                        {feature.desc}
+                      </p>
                     </div>
                   </div>
                 ))}
               </div>
-              <Button asChild className="mt-8 bg-indigo-600 hover:bg-indigo-700 text-white">
+              <Button
+                asChild
+                className="mt-8 bg-indigo-600 hover:bg-indigo-700 text-white"
+              >
                 <Link href="/register/customer">
                   Start Buying
                   <ArrowRight className="h-4 w-4 ml-2" />
@@ -164,7 +233,10 @@ export default function HomePage() {
       </section>
 
       {/* For Factories */}
-      <section id="for-factories" className="py-20 px-6 bg-slate-50 text-zinc-900">
+      <section
+        id="for-factories"
+        className="py-20 px-6 bg-slate-50 text-zinc-900"
+      >
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Text */}
@@ -203,13 +275,20 @@ export default function HomePage() {
                       <feature.icon className="h-4.5 w-4.5 text-blue-600" />
                     </div>
                     <div>
-                      <p className="font-semibold text-zinc-900 text-sm">{feature.title}</p>
-                      <p className="text-sm text-zinc-500 mt-0.5">{feature.desc}</p>
+                      <p className="font-semibold text-zinc-900 text-sm">
+                        {feature.title}
+                      </p>
+                      <p className="text-sm text-zinc-500 mt-0.5">
+                        {feature.desc}
+                      </p>
                     </div>
                   </div>
                 ))}
               </div>
-              <Button asChild className="mt-8 bg-blue-600 hover:bg-blue-700 text-white">
+              <Button
+                asChild
+                className="mt-8 bg-blue-600 hover:bg-blue-700 text-white"
+              >
                 <Link href="/register/factory">
                   List Your Factory
                   <ArrowRight className="h-4 w-4 ml-2" />
@@ -220,7 +299,9 @@ export default function HomePage() {
             {/* Visual */}
             <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm">
               <div className="flex items-center justify-between mb-4">
-                <p className="text-sm font-semibold text-zinc-900">Factory Dashboard</p>
+                <p className="text-sm font-semibold text-zinc-900">
+                  Factory Dashboard
+                </p>
                 <span className="text-xs bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full font-medium">
                   Verified
                 </span>
@@ -232,9 +313,16 @@ export default function HomePage() {
                   { label: "Revenue (30d)", value: "$48.2K" },
                   { label: "Pending", value: "3 🟡" },
                 ].map((stat) => (
-                  <div key={stat.label} className="bg-slate-50 rounded-lg p-3 border border-slate-100">
-                    <p className="text-xs text-zinc-400 font-medium">{stat.label}</p>
-                    <p className="text-lg font-bold text-zinc-900">{stat.value}</p>
+                  <div
+                    key={stat.label}
+                    className="bg-slate-50 rounded-lg p-3 border border-slate-100"
+                  >
+                    <p className="text-xs text-zinc-400 font-medium">
+                      {stat.label}
+                    </p>
+                    <p className="text-lg font-bold text-zinc-900">
+                      {stat.value}
+                    </p>
                   </div>
                 ))}
               </div>
@@ -248,7 +336,9 @@ export default function HomePage() {
                   />
                 ))}
               </div>
-              <p className="text-xs text-zinc-400 text-center">Revenue last 8 weeks</p>
+              <p className="text-xs text-zinc-400 text-center">
+                Revenue last 8 weeks
+              </p>
             </div>
           </div>
         </div>
@@ -258,7 +348,9 @@ export default function HomePage() {
       <section id="how-it-works" className="py-20 px-6 bg-white text-zinc-900">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-14">
-            <h2 className="text-3xl font-bold text-zinc-900 mb-3">How It Works</h2>
+            <h2 className="text-3xl font-bold text-zinc-900 mb-3">
+              How It Works
+            </h2>
             <p className="text-slate-800 max-w-xl mx-auto">
               From registration to your first order in days, not months.
             </p>
@@ -275,18 +367,38 @@ export default function HomePage() {
               </div>
               <div className="space-y-4">
                 {[
-                  { step: "01", title: "Register your factory", desc: "Create an account and submit your company details, registration number, and certifications." },
-                  { step: "02", title: "KYC verification", desc: "Our team reviews your documents within 1-3 business days and verifies your factory." },
-                  { step: "03", title: "List your products", desc: "Upload products with photos, specs, price tiers, and MOQ for each item." },
-                  { step: "04", title: "Receive orders & earn", desc: "Accept orders, fulfill shipments, and get paid securely through the platform." },
+                  {
+                    step: "01",
+                    title: "Register your factory",
+                    desc: "Create an account and submit your company details, registration number, and certifications.",
+                  },
+                  {
+                    step: "02",
+                    title: "KYC verification",
+                    desc: "Our team reviews your documents within 1-3 business days and verifies your factory.",
+                  },
+                  {
+                    step: "03",
+                    title: "List your products",
+                    desc: "Upload products with photos, specs, price tiers, and MOQ for each item.",
+                  },
+                  {
+                    step: "04",
+                    title: "Receive orders & earn",
+                    desc: "Accept orders, fulfill shipments, and get paid securely through the platform.",
+                  },
                 ].map((item) => (
                   <div key={item.step} className="flex gap-4">
                     <div className="text-2xl font-bold text-slate-800 w-10 shrink-0 leading-none">
                       {item.step}
                     </div>
                     <div>
-                      <p className="font-semibold text-zinc-900 text-sm">{item.title}</p>
-                      <p className="text-sm text-zinc-500 mt-0.5">{item.desc}</p>
+                      <p className="font-semibold text-zinc-900 text-sm">
+                        {item.title}
+                      </p>
+                      <p className="text-sm text-zinc-500 mt-0.5">
+                        {item.desc}
+                      </p>
                     </div>
                   </div>
                 ))}
@@ -303,18 +415,38 @@ export default function HomePage() {
               </div>
               <div className="space-y-4">
                 {[
-                  { step: "01", title: "Create a free account", desc: "Sign up with your store details. No subscription fees — pay only for what you order." },
-                  { step: "02", title: "Browse the catalog", desc: "Search 10,000+ verified products filtered by category, MOQ, price range, and origin." },
-                  { step: "03", title: "Configure your order", desc: "Select sizes, colors, and quantity. See live pricing tiers update as you adjust." },
-                  { step: "04", title: "Track your shipment", desc: "Get real-time tracking from factory floor to your door. Full transparency." },
+                  {
+                    step: "01",
+                    title: "Create a free account",
+                    desc: "Sign up with your store details. No subscription fees — pay only for what you order.",
+                  },
+                  {
+                    step: "02",
+                    title: "Browse the catalog",
+                    desc: "Search 10,000+ verified products filtered by category, MOQ, price range, and origin.",
+                  },
+                  {
+                    step: "03",
+                    title: "Configure your order",
+                    desc: "Select sizes, colors, and quantity. See live pricing tiers update as you adjust.",
+                  },
+                  {
+                    step: "04",
+                    title: "Track your shipment",
+                    desc: "Get real-time tracking from factory floor to your door. Full transparency.",
+                  },
                 ].map((item) => (
                   <div key={item.step} className="flex gap-4">
                     <div className="text-2xl font-bold text-slate-800 w-10 shrink-0 leading-none">
                       {item.step}
                     </div>
                     <div>
-                      <p className="font-semibold text-zinc-900 text-sm">{item.title}</p>
-                      <p className="text-sm text-zinc-500 mt-0.5">{item.desc}</p>
+                      <p className="font-semibold text-zinc-900 text-sm">
+                        {item.title}
+                      </p>
+                      <p className="text-sm text-zinc-500 mt-0.5">
+                        {item.desc}
+                      </p>
                     </div>
                   </div>
                 ))}
@@ -331,16 +463,26 @@ export default function HomePage() {
             Ready to transform your wholesale business?
           </h2>
           <p className="text-indigo-200 text-lg mb-10 max-w-xl mx-auto">
-            Join hundreds of brands and factories already using ClothsB2B to streamline their wholesale operations.
+            Join hundreds of brands and factories already using FactoryHub to
+            streamline their wholesale operations.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" asChild className="bg-white text-indigo-700 hover:bg-indigo-50 h-12 px-8 text-base font-semibold">
+            <Button
+              size="lg"
+              asChild
+              className="bg-white text-indigo-700 hover:bg-indigo-50 h-12 px-8 text-base font-semibold"
+            >
               <Link href="/register/customer">
                 I&apos;m a Buyer
                 <ArrowRight className="h-4 w-4 ml-2" />
               </Link>
             </Button>
-            <Button size="lg" variant="outline" asChild className="bg-transparent border-indigo-300 text-white hover:bg-indigo-700 hover:text-white h-12 px-8 text-base">
+            <Button
+              size="lg"
+              variant="outline"
+              asChild
+              className="bg-transparent border-indigo-300 text-white hover:bg-indigo-700 hover:text-white h-12 px-8 text-base"
+            >
               <Link href="/register/factory">I&apos;m a Manufacturer</Link>
             </Button>
           </div>
@@ -356,41 +498,90 @@ export default function HomePage() {
                 <div className="h-8 w-8 rounded-lg bg-indigo-600 flex items-center justify-center">
                   <Package className="h-4 w-4 text-white" />
                 </div>
-                <span className="font-bold text-white text-lg">ClothsB2B</span>
+                <span className="font-bold text-white text-lg">FactoryHub</span>
               </div>
               <p className="text-slate-800 text-sm max-w-xs">
-                The modern B2B wholesale clothing platform connecting factories and retailers worldwide.
+                The modern B2B wholesale clothing platform connecting factories
+                and retailers worldwide.
               </p>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-8 text-sm">
               <div>
                 <p className="font-semibold text-white mb-3">Platform</p>
                 <ul className="space-y-2 text-slate-800">
-                  <li><Link href="/store" className="hover:text-white transition-colors">Browse Catalog</Link></li>
-                  <li><Link href="/register/factory" className="hover:text-white transition-colors">List Factory</Link></li>
-                  <li><Link href="/login" className="hover:text-white transition-colors">Sign In</Link></li>
+                  <li>
+                    <Link
+                      href="/store"
+                      className="hover:text-white transition-colors"
+                    >
+                      Browse Catalog
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/register/factory"
+                      className="hover:text-white transition-colors"
+                    >
+                      List Factory
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/login"
+                      className="hover:text-white transition-colors"
+                    >
+                      Sign In
+                    </Link>
+                  </li>
                 </ul>
               </div>
               <div>
                 <p className="font-semibold text-white mb-3">Portals</p>
                 <ul className="space-y-2 text-slate-800">
-                  <li><Link href="/admin" className="hover:text-white transition-colors">Admin</Link></li>
-                  <li><Link href="/factory" className="hover:text-white transition-colors">Factory</Link></li>
-                  <li><Link href="/store" className="hover:text-white transition-colors">Store</Link></li>
+                  <li>
+                    <Link
+                      href="/admin"
+                      className="hover:text-white transition-colors"
+                    >
+                      Admin
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/factory"
+                      className="hover:text-white transition-colors"
+                    >
+                      Factory
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/store"
+                      className="hover:text-white transition-colors"
+                    >
+                      Store
+                    </Link>
+                  </li>
                 </ul>
               </div>
               <div>
                 <p className="font-semibold text-white mb-3">Company</p>
                 <ul className="space-y-2 text-slate-800">
-                  <li><span className="cursor-default">About</span></li>
-                  <li><span className="cursor-default">Contact</span></li>
-                  <li><span className="cursor-default">Privacy</span></li>
+                  <li>
+                    <span className="cursor-default">About</span>
+                  </li>
+                  <li>
+                    <span className="cursor-default">Contact</span>
+                  </li>
+                  <li>
+                    <span className="cursor-default">Privacy</span>
+                  </li>
                 </ul>
               </div>
             </div>
           </div>
           <div className="border-t border-slate-800 mt-10 pt-6 text-center text-xs text-slate-800">
-            © 2026 ClothsB2B. All rights reserved.
+            © 2026 FactoryHub. All rights reserved.
           </div>
         </div>
       </footer>

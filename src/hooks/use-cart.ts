@@ -4,7 +4,7 @@ import type { CartItem } from "@/types";
 import { getPriceTierForQty } from "@/lib/utils";
 import { getProductById } from "@/data";
 
-const CART_KEY = "clothsb2b_cart";
+const CART_KEY = "factoryhub_cart";
 
 function loadCart(): CartItem[] {
   if (typeof window === "undefined") return [];
@@ -32,50 +32,41 @@ export function useCart() {
     saveCart(next);
   }, []);
 
-  const addItem = useCallback(
-    (item: CartItem) => {
-      setItems((prev) => {
-        const existing = prev.find((i) => i.variantId === item.variantId);
-        let next: CartItem[];
-        if (existing) {
-          next = prev.map((i) =>
-            i.variantId === item.variantId
-              ? { ...i, quantity: i.quantity + item.quantity }
-              : i
-          );
-        } else {
-          next = [...prev, item];
-        }
-        saveCart(next);
-        return next;
-      });
-    },
-    []
-  );
-
-  const removeItem = useCallback(
-    (variantId: string) => {
-      setItems((prev) => {
-        const next = prev.filter((i) => i.variantId !== variantId);
-        saveCart(next);
-        return next;
-      });
-    },
-    []
-  );
-
-  const updateQuantity = useCallback(
-    (variantId: string, quantity: number) => {
-      setItems((prev) => {
-        const next = prev.map((i) =>
-          i.variantId === variantId ? { ...i, quantity } : i
+  const addItem = useCallback((item: CartItem) => {
+    setItems((prev) => {
+      const existing = prev.find((i) => i.variantId === item.variantId);
+      let next: CartItem[];
+      if (existing) {
+        next = prev.map((i) =>
+          i.variantId === item.variantId
+            ? { ...i, quantity: i.quantity + item.quantity }
+            : i,
         );
-        saveCart(next);
-        return next;
-      });
-    },
-    []
-  );
+      } else {
+        next = [...prev, item];
+      }
+      saveCart(next);
+      return next;
+    });
+  }, []);
+
+  const removeItem = useCallback((variantId: string) => {
+    setItems((prev) => {
+      const next = prev.filter((i) => i.variantId !== variantId);
+      saveCart(next);
+      return next;
+    });
+  }, []);
+
+  const updateQuantity = useCallback((variantId: string, quantity: number) => {
+    setItems((prev) => {
+      const next = prev.map((i) =>
+        i.variantId === variantId ? { ...i, quantity } : i,
+      );
+      saveCart(next);
+      return next;
+    });
+  }, []);
 
   const clearCart = useCallback(() => {
     persist([]);
@@ -89,7 +80,7 @@ export function useCart() {
         acc[item.factoryId].push(item);
         return acc;
       },
-      {} as Record<string, CartItem[]>
+      {} as Record<string, CartItem[]>,
     );
   }, [items]);
 

@@ -16,7 +16,7 @@ import { products } from "@/data/products";
 
 const pendingFactories = factories.filter((f) => f.status === "PENDING").length;
 const pendingProducts = products.filter(
-  (p) => p.status === "PENDING_APPROVAL"
+  (p) => p.status === "PENDING_APPROVAL",
 ).length;
 
 const navItems = [
@@ -62,7 +62,7 @@ export function AdminSidebar() {
         <div className="flex h-7 w-7 items-center justify-center rounded-md bg-violet-600">
           <Shirt className="h-4 w-4 text-white" />
         </div>
-        <span className="font-semibold text-white text-sm">ClothsB2B</span>
+        <span className="font-semibold text-white text-sm">FactoryHub</span>
         <span className="ml-auto text-xs bg-violet-900 text-violet-300 px-1.5 py-0.5 rounded font-medium">
           Admin
         </span>
@@ -83,13 +83,13 @@ export function AdminSidebar() {
                 "flex items-center gap-3 rounded-md px-3 py-2 text-sm transition-colors",
                 isActive
                   ? "bg-zinc-800 text-white"
-                  : "text-zinc-400 hover:bg-zinc-900 hover:text-zinc-200"
+                  : "text-zinc-400 hover:bg-zinc-900 hover:text-zinc-200",
               )}
             >
               <item.icon
                 className={cn(
                   "h-4 w-4 shrink-0",
-                  isActive ? "text-violet-400" : "text-zinc-500"
+                  isActive ? "text-violet-400" : "text-zinc-500",
                 )}
               />
               <span className="flex-1">{item.label}</span>

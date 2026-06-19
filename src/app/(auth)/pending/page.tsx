@@ -21,17 +21,19 @@ export default function PendingPage() {
           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-600">
             <Shirt className="h-5 w-5 text-white" />
           </div>
-          <span className="font-bold text-lg text-zinc-900">ClothsB2B</span>
+          <span className="font-bold text-lg text-zinc-900">FactoryHub</span>
         </div>
 
         <div className="bg-amber-50 border border-amber-200 rounded-xl p-6 text-center">
           <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-amber-100 mb-4">
             <Clock className="h-6 w-6 text-amber-600" />
           </div>
-          <h1 className="text-xl font-bold text-zinc-900">Application Under Review</h1>
+          <h1 className="text-xl font-bold text-zinc-900">
+            Application Under Review
+          </h1>
           <p className="text-sm text-zinc-600 mt-2">
-            Your factory application has been submitted and is being reviewed by our team.
-            We verify all factories to ensure quality and compliance.
+            Your factory application has been submitted and is being reviewed by
+            our team. We verify all factories to ensure quality and compliance.
           </p>
         </div>
 
@@ -39,9 +41,21 @@ export default function PendingPage() {
           <h2 className="font-semibold text-zinc-900">What happens next?</h2>
           <div className="space-y-3">
             {[
-              { step: "1", title: "Document Verification", desc: "We review your business registration and certifications" },
-              { step: "2", title: "Compliance Check", desc: "Our team verifies sustainability and labor standards" },
-              { step: "3", title: "Account Activation", desc: "Once approved, you can start listing products" },
+              {
+                step: "1",
+                title: "Document Verification",
+                desc: "We review your business registration and certifications",
+              },
+              {
+                step: "2",
+                title: "Compliance Check",
+                desc: "Our team verifies sustainability and labor standards",
+              },
+              {
+                step: "3",
+                title: "Account Activation",
+                desc: "Once approved, you can start listing products",
+              },
             ].map((s) => (
               <div key={s.step} className="flex gap-3">
                 <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-blue-100 text-blue-600 text-xs font-bold">
@@ -61,8 +75,11 @@ export default function PendingPage() {
             </p>
             <p className="text-xs text-zinc-500 mt-1">
               Questions? Email us at{" "}
-              <a href="mailto:verify@clothsb2b.com" className="text-blue-600 hover:underline">
-                verify@clothsb2b.com
+              <a
+                href="mailto:verify@factoryhub.com"
+                className="text-blue-600 hover:underline"
+              >
+                verify@factoryhub.com
               </a>
             </p>
           </div>
